@@ -2,8 +2,8 @@
 
 class RomanNumeralsTest extends PHPUnit_Framework_TestCase
 {
-    public function testPHPUnitIsInstalledAndSane()
+    public function testOneIsConvertedToI()
     {
-        $this->assertTrue(true);
+        $this->assertTrue('I' == toRoman(1));
     }
 }
