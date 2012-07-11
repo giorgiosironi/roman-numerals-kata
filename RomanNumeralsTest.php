@@ -9,8 +9,8 @@ class RomanNumeralsTest extends PHPUnit_Framework_TestCase
 {
     public function testTheIntervalOneToThreeIsConverted()
     {
-        $this->assertTrue('I' == toRoman(1));
-        $this->assertTrue('II' == toRoman(2));
-        $this->assertTrue('III' == toRoman(3));
+        $this->assertEquals('I', toRoman(1));
+        $this->assertEquals('II', toRoman(2));
+        $this->assertEquals('III', toRoman(3));
     }
 }
