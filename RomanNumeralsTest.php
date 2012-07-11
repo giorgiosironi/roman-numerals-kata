@@ -85,6 +85,10 @@ class RomanNumeralsTest extends PHPUnit_Framework_TestCase
 
     public function testNumbersGreaterThan10CanBeDividedIntoCiphers()
     {
-        $this->assertEquals('XXIX', $this->toRoman(29));
+        $this->assertEquals('XX' . 'IX', $this->toRoman(29));
+        $this->assertEquals('XL' . 'VIII', $this->toRoman(48));
+        $this->assertEquals('LX' . 'IV', $this->toRoman(64));
+        $this->assertEquals('LXX' . 'II', $this->toRoman(72));
+        $this->assertEquals('XC' . 'IX', $this->toRoman(99));
     }
 }
