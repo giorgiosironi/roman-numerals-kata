@@ -35,4 +35,9 @@ class RomanNumeralsTest extends PHPUnit_Framework_TestCase
     {
         $this->assertEquals('IV', toRoman(4));
     }
+
+    public function test9()
+    {
+        $this->assertEquals('IX', toRoman(9));
+    }
 }
