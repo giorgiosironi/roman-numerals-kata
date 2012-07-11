@@ -9,7 +9,7 @@ function toRoman($number)
             return 'I' . $symbol;
         }
     }
-    if ($number >= 5) {
+    while ($number >= 5) {
         $roman .= 'V';
         $number -= 5;
     } 
