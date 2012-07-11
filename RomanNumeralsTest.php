@@ -24,6 +24,7 @@ class RomanNumeralsTest extends PHPUnit_Framework_TestCase
 
     public function testSixIsConverted()
     {
+        $this->markTestSkipped();
         $this->assertEquals('VI', toRoman(6));
     }
 }
