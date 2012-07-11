@@ -2,7 +2,13 @@
 
 function toRoman($number)
 {
+    $symbols = array(5 => 'V', 10 => 'X');
     $roman = '';
+    foreach ($symbols as $denomination => $symbol) {
+        if ($number == $denomination - 1) {
+            return 'I' . $symbol;
+        }
+    }
     if ($number >= 5) {
         $roman .= 'V';
         $number -= 5;
