@@ -31,14 +31,15 @@ class RomanNumeralsTest extends PHPUnit_Framework_TestCase
     {
         $this->toRoman = function($number) {
             $ciphers = array(
-                romanCipher('I', 'V', 'X'),
-                romanCipher('X', 'L', 'C'),
+                '1' => romanCipher('I', 'V', 'X'),
+                '2' => romanCipher('X', 'L', 'C'),
             );
             $arabic = (string) $number;
             $fullRoman = '';
-            for ($i = strlen($arabic) - 1; $i >= 0; $i--) {
-                $cipher = $ciphers[$i];
-                $fullRoman = $cipher($arabic{$i}) . $fullRoman;
+            for ($i = 0; $i < strlen($arabic); $i++) {
+                $position = strlen($arabic) - $i;
+                $cipher = $ciphers[$position];
+                $fullRoman .= $cipher($arabic{$i});
             }
             return $fullRoman;
         };
