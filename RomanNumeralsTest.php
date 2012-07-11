@@ -7,7 +7,11 @@ function toRoman($number)
         $roman .= 'V';
         $number -= 5;
     } 
-    $roman .= str_repeat('I', $number);
+    if ($number > 3) {
+        $roman = 'IV';
+    } else {
+        $roman .= str_repeat('I', $number);
+    }
     return $roman;
 }
 
@@ -25,8 +29,13 @@ class RomanNumeralsTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('V', toRoman(5));
     }
 
-    public function testSymbolsAreAdditive()
+    public function testSmallerSymbolsOnTheRightAreAdditive()
     {
         $this->assertEquals('VI', toRoman(6));
+    }
+
+    public function testSmallerSymbolsOnTheLeftAreSubtractive()
+    {
+        $this->assertEquals('IV', toRoman(4));
     }
 }
