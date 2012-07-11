@@ -21,6 +21,11 @@ function toRoman($number)
 
 class RomanNumeralsTest extends PHPUnit_Framework_TestCase
 {
+    public function toRoman($number)
+    {
+        return toRoman($number);
+    }
+
     public function testTheISymbolCanBeRepeated()
     {
         $this->assertEquals('I', toRoman(1));
