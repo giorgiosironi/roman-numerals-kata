@@ -14,8 +14,6 @@ function toRoman($number)
         $number -= 5;
     } 
     $roman .= str_repeat('I', $number);
-    $roman = str_replace('IIII', 'IV', $roman);
-    $roman = str_replace('VIV', 'IX', $roman);
     return $roman;
 }
 
