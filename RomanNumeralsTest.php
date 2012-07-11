@@ -3,9 +3,11 @@
 function toRoman($number)
 {
     if ($number == 5) {
-        return 'V';
+        $roman = 'V';
+    } else {
+        $roman = str_repeat('I', $number);
     }
-    return str_repeat('I', $number);
+    return $roman;
 }
 
 class RomanNumeralsTest extends PHPUnit_Framework_TestCase
