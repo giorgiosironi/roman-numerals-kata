@@ -2,11 +2,12 @@
 
 function toRoman($number)
 {
-    $symbols = array(1 => 'I', 5 => 'V', 10 => 'X');
+    $firstSymbol = 'I';
+    $symbols = array(1 => $firstSymbol, 5 => 'V', 10 => 'X');
     $roman = '';
     foreach ($symbols as $denomination => $symbol) {
         if ($number == $denomination - 1) {
-            return 'I' . $symbol;
+            return $firstSymbol . $symbol;
         }
     }
     foreach (array_reverse($symbols, true) as $denomination => $symbol) {
