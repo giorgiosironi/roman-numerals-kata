@@ -3,6 +3,9 @@
 function romanCipher($firstSymbol, $middleSymbol, $lastSymbol)
 {
     return function($number) use ($firstSymbol, $middleSymbol, $lastSymbol) {
+        if ($number == 0) {
+            return '';
+        }
         $symbols = array(1 => $firstSymbol,
                          5 => $middleSymbol,
                          10 => $lastSymbol);
@@ -45,6 +48,11 @@ class RomanNumeralsTest extends PHPUnit_Framework_TestCase
     {
         $toRoman = $this->toRoman;
         return $toRoman($number);
+    }
+
+    public function testZeroHasNoRomanRepresentation()
+    {
+        $this->assertEquals('', $this->toRoman(0));
     }
 
     public function testTheISymbolCanBeRepeated()
