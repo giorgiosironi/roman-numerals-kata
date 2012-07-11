@@ -21,4 +21,9 @@ class RomanNumeralsTest extends PHPUnit_Framework_TestCase
     {
         $this->assertEquals('V', toRoman(5));
     }
+
+    public function testSixIsConverted()
+    {
+        $this->assertEquals('VI', toRoman(6));
+    }
 }
