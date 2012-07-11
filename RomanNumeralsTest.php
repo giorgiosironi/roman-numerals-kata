@@ -1,6 +1,6 @@
 <?php
 
-function romanSystem($firstSymbol, $middleSymbol, $lastSymbol)
+function romanCipher($firstSymbol, $middleSymbol, $lastSymbol)
 {
     return function($number) use ($firstSymbol, $middleSymbol, $lastSymbol) {
         $symbols = array(1 => $firstSymbol,
@@ -26,7 +26,7 @@ class RomanNumeralsTest extends PHPUnit_Framework_TestCase
 {
     public function setUp()
     {
-        $this->toRoman = romanSystem('I', 'V', 'X');
+        $this->toRoman = romanCipher('I', 'V', 'X');
     }
 
     public function toRoman($number)
@@ -60,5 +60,10 @@ class RomanNumeralsTest extends PHPUnit_Framework_TestCase
     public function testTheVSymbolCannotBeRepeatedTwice()
     {
         $this->assertEquals('IX', $this->toRoman(9));
+    }
+
+    public function testNumbersGreaterThan10CanBeDividedIntoCiphers()
+    {
+        $this->assertEquals('XXIX', $this->toRoman(29));
     }
 }
