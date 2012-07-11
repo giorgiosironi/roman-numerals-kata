@@ -13,19 +13,19 @@ function toRoman($number)
 
 class RomanNumeralsTest extends PHPUnit_Framework_TestCase
 {
-    public function testTheIntervalOneToThreeIsConverted()
+    public function testTheISymbolCanBeRepeated()
     {
         $this->assertEquals('I', toRoman(1));
         $this->assertEquals('II', toRoman(2));
         $this->assertEquals('III', toRoman(3));
     }
 
-    public function testFiveIsConverted()
+    public function testFiveHasItsOwnSymbol()
     {
         $this->assertEquals('V', toRoman(5));
     }
 
-    public function testSixIsConverted()
+    public function testSymbolsAreAdditive()
     {
         $this->assertEquals('VI', toRoman(6));
     }
