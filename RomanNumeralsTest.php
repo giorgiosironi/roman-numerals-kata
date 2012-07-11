@@ -13,7 +13,10 @@ function toRoman($number)
         $roman .= 'V';
         $number -= 5;
     } 
-    $roman .= str_repeat('I', $number);
+    while ($number >= 1) {
+        $roman .= 'I';
+        $number -= 1;
+    } 
     return $roman;
 }
 
