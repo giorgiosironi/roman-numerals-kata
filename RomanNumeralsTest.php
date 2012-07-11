@@ -34,6 +34,7 @@ class RomanNumeralsTest extends PHPUnit_Framework_TestCase
                 '1' => romanCipher('I', 'V', 'X'),
                 '2' => romanCipher('X', 'L', 'C'),
                 '3' => romanCipher('C', 'D', 'M'),
+                '4' => romanCipher('M', '?', '?'),
             );
             $arabic = (string) $number;
             $fullRoman = '';
@@ -97,5 +98,11 @@ class RomanNumeralsTest extends PHPUnit_Framework_TestCase
     {
         $this->assertEquals('C' . 'XX' . 'IV', $this->toRoman(124));
         $this->assertEquals('CM' . 'XC' . 'IX', $this->toRoman(999));
+    }
+
+    public function testNumbersBetween1000And3999CanBeRepresentedWithoutAnAdditionalMiddleSymbol()
+    {
+        $this->assertEquals('MM' . 'XL' . 'II', $this->toRoman(2042));
+        $this->assertEquals('MMM' . 'CM' . 'XC' . 'IX', $this->toRoman(3999));
     }
 }
