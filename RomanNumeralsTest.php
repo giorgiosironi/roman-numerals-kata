@@ -2,11 +2,12 @@
 
 function toRoman($number)
 {
-    if ($number == 5) {
-        $roman = 'V';
-    } else {
-        $roman = str_repeat('I', $number);
-    }
+    $roman = '';
+    if ($number >= 5) {
+        $roman .= 'V';
+        $number -= 5;
+    } 
+    $roman .= str_repeat('I', $number);
     return $roman;
 }
 
