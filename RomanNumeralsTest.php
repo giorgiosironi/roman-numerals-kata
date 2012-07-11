@@ -1,14 +1,9 @@
 <?php
 
-function toRoman($number)
-{
-    return 'I';
-}
-
 class RomanNumeralsTest extends PHPUnit_Framework_TestCase
 {
-    public function testOneIsConvertedToI()
+    public function testTwoIsConvertedToII()
     {
-        $this->assertTrue('I' == toRoman(1));
+        $this->assertTrue('II' == toRoman(2));
     }
 }
