@@ -26,7 +26,19 @@ class RomanNumeralsTest extends PHPUnit_Framework_TestCase
 {
     public function setUp()
     {
-        $this->toRoman = romanCipher('I', 'V', 'X');
+        $this->toRoman = function($number) {
+            $ciphers = array(
+                romanCipher('X', 'L', 'C'),
+                romanCipher('I', 'V', 'X')
+            );
+            $arabic = (string) $number;
+            $fullRoman = '';
+            for ($i = 0; $i < count($ciphers); $i++) {
+                $cipher = $ciphers[$i];
+                $fullRoman .= $cipher($arabic{$i});
+            }
+            return $fullRoman;
+        };
     }
 
     public function toRoman($number)
