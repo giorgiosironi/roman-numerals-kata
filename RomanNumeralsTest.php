@@ -7,8 +7,10 @@ function toRoman($number)
 
 class RomanNumeralsTest extends PHPUnit_Framework_TestCase
 {
-    public function testTwoIsConvertedToII()
+    public function testTheIntervalOneToThreeIsConverted()
     {
+        $this->assertTrue('I' == toRoman(1));
         $this->assertTrue('II' == toRoman(2));
+        $this->assertTrue('III' == toRoman(3));
     }
 }
