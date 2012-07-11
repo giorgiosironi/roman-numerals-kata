@@ -7,11 +7,8 @@ function toRoman($number)
         $roman .= 'V';
         $number -= 5;
     } 
-    if ($number > 3) {
-        $roman = 'IV';
-    } else {
-        $roman .= str_repeat('I', $number);
-    }
+    $roman .= str_repeat('I', $number);
+    $roman = str_replace('IIII', 'IV', $roman);
     return $roman;
 }
 
