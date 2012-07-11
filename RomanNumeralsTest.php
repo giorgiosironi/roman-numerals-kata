@@ -33,6 +33,7 @@ class RomanNumeralsTest extends PHPUnit_Framework_TestCase
             $ciphers = array(
                 '1' => romanCipher('I', 'V', 'X'),
                 '2' => romanCipher('X', 'L', 'C'),
+                '3' => romanCipher('C', 'D', 'M'),
             );
             $arabic = (string) $number;
             $fullRoman = '';
@@ -90,5 +91,11 @@ class RomanNumeralsTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('LX' . 'IV', $this->toRoman(64));
         $this->assertEquals('LXX' . 'II', $this->toRoman(72));
         $this->assertEquals('XC' . 'IX', $this->toRoman(99));
+    }
+
+    public function testEvenNumbersGreaterThan100CanBeDividedIntoCiphers()
+    {
+        $this->assertEquals('C' . 'XX' . 'IV', $this->toRoman(124));
+        $this->assertEquals('CM' . 'XC' . 'IX', $this->toRoman(999));
     }
 }
