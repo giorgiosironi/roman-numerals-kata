@@ -9,14 +9,12 @@ function toRoman($number)
             return 'I' . $symbol;
         }
     }
-    while ($number >= 5) {
-        $roman .= 'V';
-        $number -= 5;
-    } 
-    while ($number >= 1) {
-        $roman .= 'I';
-        $number -= 1;
-    } 
+    foreach (array_reverse($symbols, true) as $denomination => $symbol) {
+        while ($number >= $denomination) {
+            $roman .= $symbol;
+            $number -= $denomination;
+        } 
+    }
     return $roman;
 }
 
